@@ -1,0 +1,18 @@
+import string
+import collections as coll
+
+
+k= input("Ingresa tu frase: ")
+if len(k)>0:
+    may = coll.deque(string.ascii_uppercase)
+    min = coll.deque(string.ascii_lowercase)
+
+    may.rotate(-1)
+    min.rotate(-1)
+
+    may = ''.join(list(may))
+    min = ''.join(list(min))
+
+    print (k.translate(str.maketrans(string.ascii_uppercase,may)).translate(str.maketrans(string.ascii_lowercase,min)))
+else:
+    print("Necesito más palbras")
